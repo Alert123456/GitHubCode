@@ -186,6 +186,8 @@
 #         #模拟根据设计制作3D打印模型的过程
 #         print('Printing model: ' + current_design)
 #         completed_models.append(current_design)
+
+
 # def show_completed_models(completed_models):
 # #显示好打印的所有模型
 #     print('\n打印好的所有模型: ')
@@ -200,33 +202,175 @@
 # print_models(unprinted_designs[:], completed_models)
 # show_completed_models(completed_models)
 ##############################################################
-# 习题8-9/8-10/8-11
-print('\n习题8-9/8-10/8-11')
-
-
-def show_magicians(names): #8-9
-    for name in names:
-        print("这个魔术师的名字是：" + name.title())
-
-
-def make_great(Last_names, New_names):
-    while Last_names:
-        name = Last_names.pop()
-        New_names.append('The Great ' + name)
-
-
-magician_names = ['dawei', 'luobote', 'huluob']
-new_names = []
-
-
-make_great(magician_names, new_names) #8-10
-print("之前的列表：")
-show_magicians(magician_names)
-print("新的列表：")
-show_magicians(new_names)
-
-make_great(magician_names[:], new_names) #8-11
-print("之前的列表：")
-show_magicians(magician_names)
-print("新的列表：")
-show_magicians(new_names)
+# # 习题8-9/8-10/8-11
+# print('\n习题8-9/8-10/8-11')
+#
+#
+# def show_magicians(names): #8-9
+#     for name in names:
+#         print("这个魔术师的名字是：" + name.title())
+#
+#
+# def make_great(Last_names, New_names):
+#     while Last_names:
+#         name = Last_names.pop()
+#         New_names.append('The Great ' + name)
+#
+#
+# magician_names = ['dawei', 'luobote', 'huluob']
+# new_names = []
+#
+#
+# make_great(magician_names, new_names) #8-10
+# print("之前的列表：")
+# show_magicians(magician_names)
+# print("新的列表：")
+# show_magicians(new_names)
+#
+# make_great(magician_names[:], new_names) #8-11
+# print("之前的列表：")
+# show_magicians(magician_names)
+# print("新的列表：")
+# show_magicians(new_names)
+##############################################################
+# def make_pizza(*toppings):
+#     """打印顾客点的所有配料"""
+#     print(toppings)
+#
+#
+# make_pizza('pepperoni')
+# make_pizza("mushrooms",'green peppers','extra cheese')
+##############################################################
+# def make_pizza(*toppings):
+#     """概述要制作的披萨"""
+#     print('\nMaking a pizza with the following toppings:')
+#     for topping in toppings:
+#         print("-" + topping)
+#
+#
+# make_pizza('pepperoni')
+# make_pizza("mushrooms", 'green peppers', 'extra cheese')
+##############################################################
+# def make_pizza(size,*toppings):
+#     """概述要制作的比萨"""
+#     print("\nMaking a " + str(size) + '-inch pizza with the following '
+#                                       'toppings:')
+#     for topping in toppings:
+#         print("-" + topping)
+#
+#
+# make_pizza(16, 'pepperoni')
+# make_pizza(12, 'mishrooms', 'green pepers', 'extra cheese')
+##############################################################
+# def bulid_profile(first, last, **user_info):
+#     """创建一个字典，其中包含我们知道的有关用户的一切"""
+#     profile = {}
+#     profile['first_name'] = first
+#     profile['last_name'] = last
+#     for key, value in user_info.items():
+#         profile[key] = value
+#     return profile
+#
+#
+# user_profile = bulid_profile('albert', 'einstein',
+#                              location = 'princeton',
+#                              field = 'physics')
+# print(user_profile)
+##############################################################
+# #习题8-12
+# print('\n习题8-12')
+# def get_food(*foods):
+#     print("你需要加入的食材有： ")
+#     for food in foods:
+#         print(food)
+#
+#
+# get_food('shala', 'noddle', 'beef')
+##############################################################
+# # 习题8-13
+# print('\n习题8-13')
+#
+#
+# def bulid_profile(first, last, **user_info):
+#     """创建一个字典，其中包含我们知道的有关用户的一切"""
+#     profile = {}
+#     profile['first_name'] = first
+#     profile['last_name'] = last
+#     for key, value in user_info.items():
+#         profile[key] = value
+#     return profile
+#
+#
+# user_profile = bulid_profile('albert', 'einstein',
+#                              location='princeton',
+#                              field='physics',
+#                              city='shenzhen')
+# print(user_profile)
+##############################################################
+# # 习题8-14
+# print('\n习题8-14')
+#
+#
+# def make_car(make, size, **lib):
+#     cars = {}
+#     cars['制造商'] = make
+#     cars['型号'] = size
+#     for key,value in lib.items():
+#         cars[key] = value
+#     return cars
+#
+#
+# car = make_car('subaru', 'outback', color='blue', tow_package=True)
+# print(car)
+##############################################################
+# import pizza #导入整个模块
+# pizza.make_pizza(16, 'pepperoni')
+# pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+##############################################################
+# import pizza as p #导入整个模块
+# p.make_pizza(16, 'pepperoni')
+# p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+##############################################################
+# from pizza import make_pizza #导入特定模块
+# make_pizza(16, 'pepperoni')
+# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+##############################################################
+# from pizza import make_pizza as mp #指定变量别名
+# mp(16, 'pepperoni')
+# mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+##############################################################
+# from pizza import * #一般不推荐使用
+# make_pizza(16, 'pepperoni')
+# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+##############################################################
+# # 习题8-15
+# import printing_functions as pf
+#
+# unprint = ['A', 'B', 'C']
+# inprint = []
+# pf.print_models(unprint, inprint)
+##############################################################
+# 习题8-16
+unprint = ['A', 'B', 'C']
+inprint = []
+##############################################################
+# import printing_functions
+#
+# printing_functions.print_models(unprint, inprint)
+##############################################################
+# from printing_functions import print_models
+#
+# print_models(unprint, inprint)
+# ##############################################################
+# from printing_functions import print_models as pm
+#
+# pm(unprint, inprint)
+# ##############################################################
+# import printing_functions as pf
+#
+# pf.print_models(unprint, inprint)
+##############################################################
+# from printing_functions import *
+#
+# print_models(unprint, inprint)
+#############################################################
