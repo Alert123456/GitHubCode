@@ -161,8 +161,9 @@ else:
             print("Hello " + name + ", thank you for logging in again.")
 #习题5-10
 print("\n习题5-10")
-current_users = ['alert','one','two','admin','origin']
+current_users = ['ALERT','one','TWO','admin','origin']
 new_users = ['Alert','btw','miku','admin','origin']
+current_users = [ current_user.lower() for current_user in current_users]
 for new_user in new_users:
     if new_user.lower() in current_users:
         print("该用户名 " + new_user + " 已经使用，请更换其他有户名")
