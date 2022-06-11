@@ -441,90 +441,208 @@
 # admin = Admin('李', '华', '男', 26)
 # admin.privileges.show_privileges()
 ##########################################################################
-# 习题9-9
-print('习题9-9')
+# # 习题9-9
+# print('习题9-9')
+#
+#
+# class Car():
+#     """一次模拟汽车的简单尝试"""
+#
+#     def __init__(self, make, model, year):
+#         """初始化描述汽车的属性"""
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 0
+#         self.gas_tank = 0
+#
+#     def get_descriptive_name(self):
+#         """返回整洁的描述性信息"""
+#         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+#         return long_name.title()
+#
+#     def read_odometer(self):
+#         """打印一条指出汽车里程的消息"""
+#         print("This car has " + str(self.odometer_reading) + ' miles on it.')
+#
+#     def update_odometer(self, milage):  # 通过方法更新数值
+#         """
+#         将里程表读数设置为指定的值
+#         禁止将里程表读数往回调
+#         """
+#         if milage >= self.odometer_reading:
+#             self.odometer_reading = milage
+#         else:
+#             print("You can't roll back an odometer!")
+#
+#     def increment_odometer(self, miles):
+#         """将里程表读数增加指定的量"""
+#         self.odometer_reading += miles
+#
+#     def fill_gas_tank(self):
+#         self.gas_tank = 1000
+#         print("This car's gas is " + str(self.gas_tank) + "!")
+#
+#
+# class Battery():
+#     def __init__(self, battery_size=70):
+#         self.battery_size = battery_size
+#
+#     def describe_battery(self):
+#         """打印一条描述电瓶容量的消息"""
+#         print("This car has a " + str(self.battery_size) + '-kWh battery.')
+#
+#     def get_range(self):
+#         """打印一条信息，指出电瓶的续航里程"""
+#         if self.battery_size == 70:
+#             range = 240
+#         elif self.battery_size == 85:
+#             range = 270
+#
+#         message = "This car can go approximately " + str(range)
+#         message += " miles on a full charge."
+#         print(message)
+#
+#     def upgrade_battery(self):
+#         if self.battery_size != 85:
+#             self.battery_size = 85
+#
+#
+# class ElectricCar(Car):
+#     """电动汽车的独特之处"""
+#
+#     def __init__(self, make, model, year):
+#         """初始化父类的属性"""
+#         # super函数将父类的所有属性与方法给予子类
+#         super().__init__(make, model, year)
+#         self.battery = Battery()  # 将一个类单独提取出来作为实例
+#
+#     def fill_gas_tank(self):
+#         """电动汽车没有油箱"""
+#         print("This car doesn't need a gas tank!")
+#
+#
+#
+# my_tesla = ElectricCar('tesla', 'model s', 2016)
+# print(my_tesla.get_descriptive_name())
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.upgrade_battery()
+# my_tesla.battery.describe_battery()
+##########################################################################
+# # 导入类 增加文件 car.py
+# from car import Car
+#
+# my_new_car = Car('audi', 'a4', 2016)
+# print(my_new_car.get_descriptive_name())
+#
+# my_new_car.odometer_reading = 23
+# my_new_car.read_odometer()
+##########################################################################
+# 导入单个类
+# from car import ElectricCar
+#
+# my_tesla = ElectricCar('tesla', 'model s', 2016)
+#
+# print(my_tesla.get_descriptive_name())
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.get_range()
+##########################################################################
+# # 导入多个类
+# from car import Car,ElectricCar
+#
+# my_beetle = Car('volkswagen', 'beetle', 2016)
+# print(my_beetle.get_descriptive_name())
+# my_tesla = ElectricCar('tesla', 'roadster', 2016)
+# print(my_tesla.get_descriptive_name())
+##########################################################################
+# # 导入整个模块
+# import car
+# my_beetle = car.Car('volkswagen', 'beetle', 2016)
+# print(my_beetle.get_descriptive_name())
+# my_tesla = car.ElectricCar('tesla', 'roadster', 2016)
+# print(my_tesla.get_descriptive_name())
+##########################################################################
+# # 本习题后将 ElectricCar、Battery类 从 car.py 分离
+# from car import Car
+# from electric_car import ElectricCar
+#
+# my_beetle = Car('volkswagen', 'beetle', 2016)
+# print(my_beetle.get_descriptive_name())
+# my_tesla = ElectricCar('tesla', 'roadster', 2016)
+# print(my_tesla.get_descriptive_name())
+##########################################################################
+# # 习题9-10
+# print('习题9-10')
+#
+# from restaurant import Restaurant
+#
+# restaurant = Restaurant('老厨家', 26)
+# restaurant.describe_restaurant()
+##########################################################################
+# # 习题9-11
+# print('习题9-11')
+# from user import Admin
+# admin = Admin('李', '华', '男', 26)
+# admin.privileges.show_privileges()
+##########################################################################
+# # 习题9-12
+# print('习题9-12')
+#
+# from admin import Admin
+#
+# admin = Admin('李', '华', '男', 26)
+# admin.privileges.show_privileges()
+##########################################################################
+# # Python 标准库
+# from collections import OrderedDict
+#
+# favorite_languages = OrderedDict()  #创建一个有序字典
+#
+# favorite_languages['jen'] = 'python'
+# favorite_languages['sarah'] = 'c'
+# favorite_languages['edward'] = 'ruby'
+# favorite_languages['phil'] = 'python'
+#
+# for name,language in favorite_languages.items():
+#     print(name.title() + "'s favorite language is " + language.title() + '.')
+
+##########################################################################
+# # 习题9-13改写习题6-4
+# print('习题9-13改写习题6-4')
+#
+# from collections import OrderedDict
+#
+# explain = OrderedDict({
+#     '添加键值对': 'name["键"] = 值',
+#     '修改字典的值': 'name["键"] = 值',
+#     '删除键值对': 'del name["键"] ',
+#     '空列表检测': 'if not list：',
+#     '布尔表达式': '为True或False',
+# })
+# for key, value in explain.items():
+#     print(key + ':' + value)
+##########################################################################
+# 习题9-14
+print('习题9-14')
+
+from random import randint
 
 
-class Car():
-    """一次模拟汽车的简单尝试"""
+class Die():
 
-    def __init__(self, make, model, year):
-        """初始化描述汽车的属性"""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
-        self.gas_tank = 0
+    def __init__(self,sides=6):
+        self.sides = sides
 
-    def get_descriptive_name(self):
-        """返回整洁的描述性信息"""
-        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
-        return long_name.title()
+    def roll_die(self):
 
-    def read_odometer(self):
-        """打印一条指出汽车里程的消息"""
-        print("This car has " + str(self.odometer_reading) + ' miles on it.')
+        number = randint(1,self.sides)
+        print("这是个" + str(self.sides) + '面的骰子，掷出来的数字是' + str(number)
+              + '!')
 
-    def update_odometer(self, milage):  # 通过方法更新数值
-        """
-        将里程表读数设置为指定的值
-        禁止将里程表读数往回调
-        """
-        if milage >= self.odometer_reading:
-            self.odometer_reading = milage
-        else:
-            print("You can't roll back an odometer!")
-
-    def increment_odometer(self, miles):
-        """将里程表读数增加指定的量"""
-        self.odometer_reading += miles
-
-    def fill_gas_tank(self):
-        self.gas_tank = 1000
-        print("This car's gas is " + str(self.gas_tank) + "!")
-
-
-class Battery():
-    def __init__(self, battery_size=70):
-        self.battery_size = battery_size
-
-    def describe_battery(self):
-        """打印一条描述电瓶容量的消息"""
-        print("This car has a " + str(self.battery_size) + '-kWh battery.')
-
-    def get_range(self):
-        """打印一条信息，指出电瓶的续航里程"""
-        if self.battery_size == 70:
-            range = 240
-        elif self.battery_size == 85:
-            range = 270
-
-        message = "This car can go approximately " + str(range)
-        message += " miles on a full charge."
-        print(message)
-
-    def upgrade_battery(self):
-        if self.battery_size != 85:
-            self.battery_size = 85
-
-
-class ElectricCar(Car):
-    """电动汽车的独特之处"""
-
-    def __init__(self, make, model, year):
-        """初始化父类的属性"""
-        # super函数将父类的所有属性与方法给予子类
-        super().__init__(make, model, year)
-        self.battery = Battery()  # 将一个类单独提取出来作为实例
-
-    def fill_gas_tank(self):
-        """电动汽车没有油箱"""
-        print("This car doesn't need a gas tank!")
-
-
-
-my_tesla = ElectricCar('tesla', 'model s', 2016)
-print(my_tesla.get_descriptive_name())
-my_tesla.battery.describe_battery()
-my_tesla.battery.upgrade_battery()
-my_tesla.battery.describe_battery()
+temp = 6 # 可以等于6,10,20完成要求
+die = Die(temp)
+for i in range(10):
+    die.roll_die()
+# p.s.
+# 驼峰命名法 :即将类名中的每个单词的首字母都大写，而不使用下划线。实例名和模块名
+# 都采用小写格式，并在单词之间加上下划线。
