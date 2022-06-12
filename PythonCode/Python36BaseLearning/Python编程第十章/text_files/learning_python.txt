@@ -1,0 +1,3 @@
+In Python you can: open()
+In Python you can: text_files/pi_digits.txt
+In Python you can: D:/.../.../.../text_files/pi_digits.txt
