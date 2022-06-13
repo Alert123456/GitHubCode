@@ -133,13 +133,137 @@
 #     with open(filename,'a') as file_object:
 #         file_object.write(names + '\n')
 #############################################################################
-# 习题10-5
-print('习题10-5')
-filename = 'text_files/guest.txt'
-while True:
-    print("输入'q'退出！")
-    answers = input('请问你为什么喜欢编程：')
-    if answers =='q':
-        break
-    with open(filename,'a') as file_object:
-        file_object.write(answers + '\n')
+# # 习题10-5
+# print('习题10-5')
+# filename = 'text_files/guest.txt'
+# while True:
+#     print("输入'q'退出！")
+#     answers = input('请问你为什么喜欢编程：')
+#     if answers =='q':
+#         break
+#     with open(filename,'a') as file_object:
+#         file_object.write(answers + '\n')
+#############################################################################
+# # 异常处理
+# # 除零异常
+# try:
+#     print(10/0)
+# except ZeroDivisionError:
+#     print("你不能用一个数除以0！")
+#############################################################################
+# print("请输入两个数字，我将计算他们的商！")
+# print('请输入q退出！')
+# while True:
+#     first_number = input("请输入第一个数：")
+#     if first_number == 'q':
+#         break
+#     second_number = input("请输入第二个数：")
+#     if second_number == 'q':
+#         break
+#     try:
+#         answer = int(first_number) / int(second_number)
+#     except (ZeroDivisionError or ArithmeticError):  # 全部错误都可以放在except中
+#         print("被除数不能为零！")
+#     else:
+#         print(answer)
+#############################################################################
+# filename = 'text_files/alice.txt'
+# try:
+#     with open(filename) as f_obj:
+#         contents = f_obj.read()
+# except FileNotFoundError:
+#     print("不好意思，这个文件" + filename + "不存在！")
+# else:
+#     # 计算文件大致包含多少个单词
+#     words = contents.split()  # 分隔符
+#     num_words = len(words)
+#     print("这个文件" + filename + '有' + str(num_words) + '个单词！')
+#############################################################################
+# # 将其封装成方法，更容易调用
+#
+#
+# def count_words(file_name):
+#     """计算一个文件大概包含多少个单词"""
+#     try:
+#         with open(file_name) as f_obj:
+#             contents = f_obj.read()
+#     except FileNotFoundError:
+#         pass  # 可替换为这个，直接什么都不显示，跳过！
+#         print("不好意思，这个文件" + file_name + "不存在！")
+#     else:
+#         # 计算文件大致包含多少个单词
+#         words = contents.split()  # 分隔符
+#         num_words = len(words)
+#         print("这个文件" + file_name + '有' + str(num_words) + '个单词！')
+#
+#
+# # filename = 'text_files/alice.txt'
+# # count_words(filename)
+# filenames = ['text_files/alice.txt', 'text_files/pg68301.txt', 'text_files.txt']
+# for filename in filenames:
+#     count_words(filename)
+#############################################################################
+# # 习题10-6/10-7
+# print("习题10-6/10-7")
+# while True:
+#     print('将两个数字求和')
+#     print("输入q退出")
+#     number = input("请输入第一个数字：")
+#     if number == 'q':
+#         break
+#     try:
+#         number_one = int(number)
+#     except ValueError:
+#         print('输入的不是数字！')
+#     number = input("请输入第二个数字：")
+#     if number == 'q':
+#         break
+#     try:
+#         number_two = int(number)
+#     except ValueError:
+#         print('输入的不是数字！')
+#     else:
+#         print("两个数的和为：" + str(number_one + number_two) + "!")
+#############################################################################
+# # 习题10-8/10-9
+# print("习题10-8/10-9")
+#
+#
+# def show_file(filenames):
+#     try:
+#         with open(filenames) as f_obj:
+#             contexts = f_obj.read()
+#     except FileNotFoundError:
+#         pass # 10-9
+#         # print("这个文件" + filenames + "不存在！")  # 10-8
+#     else:
+#         print(contexts)
+#
+#
+# filenames_cats = 'text_files/cats.txt'
+# filenames_dogs = 'text_files/dogs.txt'
+# filenames_error = 'dogs.txt'
+# show_file(filenames_cats)
+# show_file(filenames_dogs)
+# show_file(filenames_error)
+#############################################################################
+# # 习题10-10
+# print("习题10-10")
+#
+#
+# def statistics_characters(filename, character):
+#     try:
+#         with open(filename) as f_obj:
+#             contests = f_obj.read()
+#     except FileNotFoundError:
+#         pass
+#     else:
+#         numbers = contests.lower().split().count(character)
+#         return numbers
+#
+#
+# filenames = 'text_files/alice.txt'
+# char = 'it'
+# number = statistics_characters(filenames, char)
+# print("这本书有" + "'" + char + "'" + str(number) + "个！")
+#############################################################################
