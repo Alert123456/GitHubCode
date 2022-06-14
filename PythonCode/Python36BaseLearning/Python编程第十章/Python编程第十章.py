@@ -267,3 +267,203 @@
 # number = statistics_characters(filenames, char)
 # print("这本书有" + "'" + char + "'" + str(number) + "个！")
 #############################################################################
+# # 储存数据
+# import json
+#
+# numbers = [2, 3, 5, 7, 11, 13]
+# filename = 'json_files/number.json'
+# with open(filename, 'w') as f_obj:
+#     json.dump(numbers, f_obj)
+#
+# del numbers     #get到一个新技能，需要定时清除变量，否则电脑变得越来越慢！
+#############################################################################
+# import json
+#
+# filename = 'json_files/number.json'
+# with open(filename) as f_obj:
+#     numbers = json.load(f_obj)
+#
+# print(numbers)
+#
+# del numbers
+#############################################################################
+# #储存一个名字
+# import json
+#
+# username = input("你的名字叫什么？")
+# filename = 'json_files/username.json'
+# with open(filename, 'w') as f_obj:
+#     json.dump(username, f_obj)
+#     print('我们记住了你的名字' + username + '!')
+#
+# del username, filename
+#############################################################################
+# import json
+#
+# filename = 'json_files/username.json'
+# with open(filename) as f_obj:
+#     username = json.load(f_obj)
+#     print('我们记住了你的名字' + username + '!')
+#
+# del username, filename
+#############################################################################
+# import json
+#
+# # 如果以前储存了用户名，就加载它
+# # 否则就提示用户输入用户名储存它
+# from json import JSONDecodeError
+#
+# filename = 'json_files/username.json'
+# try:
+#     with open(filename) as f_obj:
+#         username = json.load(f_obj)
+# except FileNotFoundError:
+#     usernames = input('请输入一个名字：')
+#     with open(filename, 'w') as f_objs:
+#         json.dump(usernames, f_objs)
+#         print('我们欢迎' + usernames + '加入我们！')
+# else:
+#     print('我们欢迎' + username + '加入我们！')
+#############################################################################
+# # 将代码重构变得更加清晰明了
+# import json
+# def greet_user():
+#     """问候用户，并指出其名字"""
+#     filename = 'json_files/username.json'
+#     try:
+#         with open(filename) as f_obj:
+#             username = json.load(f_obj)
+#     except FileNotFoundError:
+#         usernames = input('请输入一个名字：')
+#         with open(filename, 'w') as f_objs:
+#             json.dump(usernames, f_objs)
+#             print('我们欢迎' + usernames + '加入我们！')
+#     else:
+#         print('欢迎老朋友' + username + '加入我们！')
+# greet_user()
+#############################################################################
+# # 功能分块
+# # 将代码重构变得更加清晰明了
+# import json
+#
+# def get_stored_username():
+#     """如果储存了用户名，就获取它"""
+#     filename = 'json_files/username.json'
+#     try:
+#         with open(filename) as f_obj:
+#             username = json.load(f_obj)
+#     except FileNotFoundError:
+#         return None
+#     else:
+#         return username
+#
+# def greet_user():
+#     """问候用户，并指出其名字"""
+#     username = get_stored_username()
+#     if username:
+#         print('欢迎老朋友' + username + '加入我们！')
+#
+#     else:
+#         username = input("请输入你的名字：")
+#         filename = 'json_files/username.json'
+#         with open(filename, 'w') as f_obj:
+#             json.dump(username, f_obj)
+#             print('我们欢迎新朋友' + username + '加入我们！')
+#
+# greet_user()
+#############################################################################
+# import json
+#
+#
+# def get_stored_username():
+#     """如果储存了用户名，就获取它"""
+#     filename = 'json_files/username.json'
+#     try:
+#         with open(filename) as f_obj:
+#             username = json.load(f_obj)
+#     except FileNotFoundError:
+#         return None
+#     else:
+#         return username
+#
+#
+# def greet_new_username():
+#     username = input("请输入你的名字：")
+#     filename = 'json_files/username.json'
+#     with open(filename, 'w') as f_obj:
+#         json.dump(username, f_obj)
+#     return username
+#
+#
+# def greet_user():
+#     """问候用户，并指出其名字"""
+#     username = get_stored_username()
+#     if username:
+#         print('欢迎老朋友' + username + '加入我们！')
+#     else:
+#         username = greet_new_username()
+#         print('我们欢迎新朋友' + username + '加入我们！')
+#
+#
+# greet_user()
+#############################################################################
+# # 习题10-11/10-12
+# print('习题10-11/10-12')
+# import json
+#
+#
+# filename = 'json_files/like_unumber.json'
+# try:
+#     with open(filename) as f_obj:
+#         like_number = json.load(f_obj)
+# except FileNotFoundError:
+#     like_number = input("请输入你喜欢的一个数字：")
+#     with open(filename, 'w') as f_obj:
+#         json.dump(like_number, f_obj)
+#         print("已成功将你喜欢的输入储存到文件中！")
+# else:
+#     print('你最喜欢的数字是：' + like_number + '!')
+#############################################################################
+# 习题10-13
+print('习题10-13')
+import json
+
+
+def get_stored_username():
+    """如果储存了用户名，就获取它"""
+    filename = 'json_files/username.json'
+    try:
+        with open(filename) as f_obj:
+            username = json.load(f_obj)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+
+def greet_new_username():
+    username = input("请输入你的名字：")
+    filename = 'json_files/username.json'
+    with open(filename, 'w') as f_obj:
+        json.dump(username, f_obj)
+    return username
+
+
+def greet_user():
+    """问候用户，并指出其名字"""
+    username = get_stored_username()
+    if username:
+        select = input("请问你是" + username + '吗？ 是/否')
+        if select == '是':
+            print('欢迎老朋友' + username + '加入我们！')
+        elif select == '否':
+            username = greet_new_username()  # 程序分块后，变得调用很方便！
+            print('我们欢迎新朋友' + username + '加入我们！')
+        else:
+            print('输入错误，程序结束！')
+    else:
+        username = greet_new_username()
+        print('我们欢迎新朋友' + username + '加入我们！')
+
+
+greet_user()
