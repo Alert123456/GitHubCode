@@ -62,7 +62,7 @@
 ##############################################################
 # #习题8-4
 # print('\n习题8-4')
-# def make_shirt(size,fonts_style='I love Python'):
+# def make_shirt(size,fonts_style='I love Python编程第十一章'):
 #     print("这件衣服的尺码是：" + str(size) +',需要在衣服上印的字是：' + fonts_style)
 #
 #

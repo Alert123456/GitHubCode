@@ -1,7 +1,7 @@
-message = "\nHello Python World!\n"
+message = "\nHello Python编程第十一章 World!\n"
 print(message)
 # 刷新message 变量
-message = "Hello Python Crash Course World!"
+message = "Hello Python编程第十一章 Crash Course World!"
 print(message)
 
 a = "This is a string."
@@ -22,8 +22,8 @@ print("Hello, " + full_name.title() + "!")
 message = "Hello, " + full_name.title() + "!"
 print(message)
 
-print("\tPython")
-print("Languages:\n\tPython\n\tC\n\tJavaScript")
+print("\tPython编程第十一章")
+print("Languages:\n\tPython编程第十一章\n\tC\n\tJavaScript")
 
 favorite_language = 'python '
 print(favorite_language)
@@ -34,7 +34,7 @@ print(favorite_language.rstrip()) #删除前方空白
 print(favorite_language.lstrip()) #删除后方空白
 print(favorite_language.strip()) #删除两侧空白
 
-message = "One of Python's strengths is its diverse community."
+message = "One of Python编程第十一章's strengths is its diverse community."
 print(message)
 
 #习题2-3

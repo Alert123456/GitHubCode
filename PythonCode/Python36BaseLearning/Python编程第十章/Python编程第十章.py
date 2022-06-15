@@ -92,7 +92,7 @@
 # for line in read_all_lines:
 #     read += line
 #
-# print(read.replace("Python", 'C'))
+# print(read.replace("Python编程第十一章", 'C'))
 #############################################################################
 # # 写入文件
 # filename = 'text_files/programming.txt'
@@ -424,46 +424,47 @@
 # else:
 #     print('你最喜欢的数字是：' + like_number + '!')
 #############################################################################
-# 习题10-13
-print('习题10-13')
-import json
-
-
-def get_stored_username():
-    """如果储存了用户名，就获取它"""
-    filename = 'json_files/username.json'
-    try:
-        with open(filename) as f_obj:
-            username = json.load(f_obj)
-    except FileNotFoundError:
-        return None
-    else:
-        return username
-
-
-def greet_new_username():
-    username = input("请输入你的名字：")
-    filename = 'json_files/username.json'
-    with open(filename, 'w') as f_obj:
-        json.dump(username, f_obj)
-    return username
-
-
-def greet_user():
-    """问候用户，并指出其名字"""
-    username = get_stored_username()
-    if username:
-        select = input("请问你是" + username + '吗？ 是/否')
-        if select == '是':
-            print('欢迎老朋友' + username + '加入我们！')
-        elif select == '否':
-            username = greet_new_username()  # 程序分块后，变得调用很方便！
-            print('我们欢迎新朋友' + username + '加入我们！')
-        else:
-            print('输入错误，程序结束！')
-    else:
-        username = greet_new_username()
-        print('我们欢迎新朋友' + username + '加入我们！')
-
-
-greet_user()
+# # 习题10-13
+# print('习题10-13')
+# import json
+#
+#
+# def get_stored_username():
+#     """如果储存了用户名，就获取它"""
+#     filename = 'json_files/username.json'
+#     try:
+#         with open(filename) as f_obj:
+#             username = json.load(f_obj)
+#     except FileNotFoundError:
+#         return None
+#     else:
+#         return username
+#
+#
+# def greet_new_username():
+#     username = input("请输入你的名字：")
+#     filename = 'json_files/username.json'
+#     with open(filename, 'w') as f_obj:
+#         json.dump(username, f_obj)
+#     return username
+#
+#
+# def greet_user():
+#     """问候用户，并指出其名字"""
+#     username = get_stored_username()
+#     if username:
+#         select = input("请问你是" + username + '吗？ 是/否')
+#         if select == '是':
+#             print('欢迎老朋友' + username + '加入我们！')
+#         elif select == '否':
+#             username = greet_new_username()  # 程序分块后，变得调用很方便！
+#             print('我们欢迎新朋友' + username + '加入我们！')
+#         else:
+#             print('输入错误，程序结束！')
+#     else:
+#         username = greet_new_username()
+#         print('我们欢迎新朋友' + username + '加入我们！')
+#
+#
+# greet_user()
+#############################################################################

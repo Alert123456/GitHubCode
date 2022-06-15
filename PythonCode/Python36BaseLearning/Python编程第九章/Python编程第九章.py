@@ -593,7 +593,7 @@
 # admin = Admin('李', '华', '男', 26)
 # admin.privileges.show_privileges()
 ##########################################################################
-# # Python 标准库
+# # Python编程第十一章 标准库
 # from collections import OrderedDict
 #
 # favorite_languages = OrderedDict()  #创建一个有序字典
