@@ -279,9 +279,9 @@ for name, value in users.items():
     print("他的全名是： " + full_name + " 他的年龄是：" + age + " 他所在城市为：" + city)
 # 习题6-8
 print('习题6-8')
-cats = {'lie': 'cat', "own_name": 'carl',}
-dogs = {'lie': 'dog', "own_name": 'cristal',}
-fishes = {'lie': 'fish', "own_name": 'Manjula',}
+cats = {'lie': 'cat', "own_name": 'carl', }
+dogs = {'lie': 'dog', "own_name": 'cristal', }
+fishes = {'lie': 'fish', "own_name": 'Manjula', }
 pets = [cats, dogs, fishes]
 for pet in pets:
     print('类型为：' + pet['lie'] + ",主人的名字为: " + pet["own_name"])
@@ -295,26 +295,28 @@ favorite_places = {
     "zhang_bolun": zhangplace,
     "ji_xingyan": jiplace,
 }
-for name,favorite_place in favorite_places.items():
-    for palce in favorite_place:
-        print(name+"like this places:" + palce )
+for name, favorite_place in favorite_places.items():
+    print('\n' + name + " like this places: ")
+    for place in favorite_place:
+        print(place)
 # 习题6-10
 print('习题6-10')
-#SongNum = [1,2,3,4,5,6]
+# SongNum = [1,2,3,4,5,6]
 
 song_zeyang = {
-    "Song": [1,2,3,4,5,6],
-    'Ji': [12,13,14,1,5,6],
-    'Zhang': [31,1,8,99,21],
-    'Liu': [31,8,79,32,7,77],
-    'Wei': [64,86,79,21,93],
+    "Song": [1, 2, 3, 4, 5, 6],
+    'Ji': [12, 13, 14, 1, 5, 6],
+    'Zhang': [31, 1, 8, 99, 21],
+    'Liu': [31, 8, 79, 32, 7, 77],
+    'Wei': [64, 86, 79, 21, 93],
 }
-for name,value in song_zeyang.items():
+for name, value in song_zeyang.items():
     for Num in value:
         print("Names: " + name + ",Value: " + str(Num))
 
 # 习题6-11
 print('习题6-11')
+
 users = {
     "Harbin": {
         "country": "China",
@@ -332,8 +334,8 @@ users = {
         'fact': 'Nice',
     },
 }
-for city,value in users.items():
-    print("城市" + city)
+for city, value in users.items():
+    print("\n城市介绍：" + city)
     print("国家" + value["country"])
     print("人口" + value["population"])
     print("事实" + value["fact"])
