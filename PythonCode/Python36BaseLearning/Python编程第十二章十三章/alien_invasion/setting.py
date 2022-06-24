@@ -11,6 +11,7 @@ class Settings():
         # self.bg_color = pygame.Color("blue")
         # 飞船的设置
         self.ship_speed_factor = 1.5
+        self.ship_limit = 3
         # 子弹设置
         self.bullet_speed_factor = 1
         self.bullet_width = 3
@@ -18,9 +19,9 @@ class Settings():
         self.bullet_color = (60, 60, 60)
         self.bullets_allowed = 3000  # 设置最大子弹数
         self.bullets_direction = 'up'  # 设置子弹方向
-        #外星人设置
+        # 外星人设置
         self.alien_speed_factor = 3  # 设置外星人移动速度
-        self.fleet_drop_speed = 10  #下落速度
+        self.fleet_drop_speed = 10  # 下落速度
         # fleet_direction为1表示向右移，为-1表示向左移
         self.fleet_direction = 1
 

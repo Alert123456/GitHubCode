@@ -35,3 +35,6 @@ class Hand():
     def draw_hand(self):
         """指定位置绘制手"""
         pygame.draw.rect(self.screen, self.color, self.rect)
+
+    def center_hand(self):
+        self.rect.center = self.screen_rect.centerx

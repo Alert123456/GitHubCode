@@ -8,7 +8,9 @@ class Settings():
         self.color = (230, 230, 230)
         # 球的移动速度
         self.boll_speed = 1
+
         # 手的基本设置
         self.hand_width = 50
         self.hand_height = 10
         self.hand_color = (0, 255, 255)
+        self.hand_limit = 3

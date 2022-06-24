@@ -30,11 +30,17 @@ def check_events(hand):
             check_keyup_events(event, hand)
 
 
-def update_boll(hand, bolls, setting):
+def update_boll(hand, bolls, setting, stats):
     collisions = pygame.sprite.collide_rect(hand, bolls) # 检测碰撞输出为Ture
     bolls.update()
-    if bolls.rect.top >= setting.screen_height or collisions:
+    if collisions:
         bolls.creat_boll(setting)
+    elif bolls.rect.top >= setting.screen_height:
+        bolls.creat_boll(setting)
+        if stats.ship_left > 0:
+            stats.ship_left -= 1
+        else:
+            stats.game_active = False
 
 
 def update_screen(setting, screen, hands, bolls):
