@@ -24,6 +24,8 @@ class Settings():
         self.fleet_drop_speed = 10  # 下落速度
         # fleet_direction为1表示向右移，为-1表示向左移
         self.fleet_direction = 1
+        # 键盘开始游戏
+        self.keyboard_play = False
 
 
 

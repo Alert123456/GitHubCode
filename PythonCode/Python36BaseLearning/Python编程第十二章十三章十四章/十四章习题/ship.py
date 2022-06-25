@@ -15,16 +15,14 @@ class Ship():
         self.screen_rect = screen.get_rect()  # 画面变成矩形
 
         # 将每艘新飞船放在屏幕底部中央
-        self.rect.centerx = self.screen_rect.centerx  # 飞船中心X坐标
-        self.rect.bottom = self.screen_rect.bottom  # 飞船下边缘Y坐标
+        self.rect.x = 0  # 飞船中心X坐标
+        self.rect.centery = self.screen_rect.centery  # 飞船下边缘Y坐标
 
         # 在飞船的属性center中储存小数值
-        self.center = float(self.rect.centerx)
-        self.centerY = float(self.rect.bottom)
+        self.center = float(self.rect.x)
+        self.centerY = float(self.rect.centery)
 
         # 移动标志
-        self.moving_right = False
-        self.moving_left = False
         self.moving_up = False
         self.moving_down = False
 
@@ -32,18 +30,13 @@ class Ship():
         """根据移动标志调整飞船的位置"""
         # 更新飞船的center值，而不是rect
         # self.moving_right标志为True 并且 飞船右坐标 < 画面右坐标
-        if self.moving_right and self.rect.right < self.screen_rect.right:
-            self.center += self.ai_settings.ship_speed_factor
-        if self.moving_left and self.rect.left > 0:
-            self.center -= self.ai_settings.ship_speed_factor
         if self.moving_up and self.rect.top > 0:
             self.centerY -= self.ai_settings.ship_speed_factor
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.centerY += self.ai_settings.ship_speed_factor
 
         # 将存在小数的center的整数传递到self.rect.centerx中
-        self.rect.centerx = self.center
-        self.rect.bottom = self.centerY
+        self.rect.centery = self.centerY
 
     def blitme(self):
         """指定位置绘制飞船"""
@@ -51,5 +44,5 @@ class Ship():
 
     def center_ship(self):
         """让飞船在屏幕上居中"""
-        self.center = self.screen_rect.centerx
-
+        self.center = self.rect.x
+        self.centerY = self.screen_rect.centery

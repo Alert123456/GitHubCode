@@ -4,7 +4,9 @@ class Game_Stats():
     def __init__(self, setting):
         self.setting = setting
         self.reset_stats()
-        self.game_active = True
+
+        # 让游戏一开始处于非活动状态
+        self.game_active = False
 
     def reset_stats(self):
         """初始化游戏运行期间可能变化的统计信息"""
