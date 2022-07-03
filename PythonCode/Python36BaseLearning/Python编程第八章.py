@@ -148,8 +148,8 @@
 # print('\n习题8-7/8-8')
 #
 #
-# def make_album(name, album, number = ''):
-#     album_lib = {'album_name': name, 'album': album}
+# def make_album(name, album, number=''):
+#     album_lib = {'歌手为：': name, '专辑：': album}
 #     if number:
 #         album_lib['number'] = number
 #     return album_lib
@@ -165,7 +165,8 @@
 #     if album == 'q':
 #         break
 #     album_lib = make_album(album_name, album)
-#     print(album_lib)
+#     for name, albums in album_lib.items():
+#         print(name + albums)
 ##############################################################
 # def greet_users(names):
 #     """向列表中的每位用户都发出简单的问候"""
@@ -233,7 +234,7 @@
 # print("新的列表：")
 # show_magicians(new_names)
 ##############################################################
-# def make_pizza(*toppings):
+# def make_pizza(*toppings):  # *toppings为元组
 #     """打印顾客点的所有配料"""
 #     print(toppings)
 #
@@ -251,7 +252,7 @@
 # make_pizza('pepperoni')
 # make_pizza("mushrooms", 'green peppers', 'extra cheese')
 ##############################################################
-# def make_pizza(size,*toppings):
+# def make_pizza(size, *toppings):
 #     """概述要制作的比萨"""
 #     print("\nMaking a " + str(size) + '-inch pizza with the following '
 #                                       'toppings:')
@@ -262,19 +263,18 @@
 # make_pizza(16, 'pepperoni')
 # make_pizza(12, 'mishrooms', 'green pepers', 'extra cheese')
 ##############################################################
+# # **user_info为字典参数，可输入任意值
 # def bulid_profile(first, last, **user_info):
 #     """创建一个字典，其中包含我们知道的有关用户的一切"""
-#     profile = {}
-#     profile['first_name'] = first
-#     profile['last_name'] = last
+#     profile = {'first_name': first, 'last_name': last}
+#
 #     for key, value in user_info.items():
 #         profile[key] = value
 #     return profile
 #
 #
-# user_profile = bulid_profile('albert', 'einstein',
-#                              location = 'princeton',
-#                              field = 'physics')
+# user_profile = bulid_profile('albert', 'einstein', location='princeton',
+#                              field='physics')
 # print(user_profile)
 ##############################################################
 # #习题8-12
@@ -350,9 +350,9 @@
 # inprint = []
 # pf.print_models(unprint, inprint)
 ##############################################################
-# 习题8-16
-unprint = ['A', 'B', 'C']
-inprint = []
+# # 习题8-16
+# unprint = ['A', 'B', 'C']
+# inprint = []
 ##############################################################
 # import printing_functions
 #

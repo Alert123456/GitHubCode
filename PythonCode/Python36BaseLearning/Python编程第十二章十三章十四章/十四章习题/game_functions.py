@@ -86,6 +86,7 @@ def check_play_keyboard(ai_setting, screen, stats, ship, bullets):
 
         # 重置游戏统计信息
         stats.reset_stats()  # 重置统计信息
+        ai_setting.initialize_dynamic_settings()
         stats.game_active = True
 
         # 清空外星人列表和子弹列表
@@ -135,7 +136,11 @@ def update_bullets(ai_settings, stats, screen, ship, marker, bullets):
                 or bullet.rect.right >= ai_settings.screen_width:
             noship_hit(ai_settings, stats, screen, ship, bullets)
             bullets.remove(bullet)
+
     ship_hit = pygame.sprite.spritecollide(marker, bullets, True)
+    if len(ship_hit):
+        ai_settings.increase_game_speed()
+    print("ship_speed_factor : " + str(ai_settings.ship_speed_factor))
 
 
 def update_marker(ai_settings, screen, ship, bullets, marker):
