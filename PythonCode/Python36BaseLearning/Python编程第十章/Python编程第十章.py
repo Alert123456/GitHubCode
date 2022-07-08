@@ -92,7 +92,7 @@
 # for line in read_all_lines:
 #     read += line
 #
-# print(read.replace("Python编程第十一章", 'C'))
+# print(read.replace("Python", 'C'))
 #############################################################################
 # # 写入文件
 # filename = 'text_files/programming.txt'
@@ -247,25 +247,25 @@
 # show_file(filenames_dogs)
 # show_file(filenames_error)
 #############################################################################
-# # 习题10-10
-# print("习题10-10")
-#
-#
-# def statistics_characters(filename, character):
-#     try:
-#         with open(filename) as f_obj:
-#             contests = f_obj.read()
-#     except FileNotFoundError:
-#         pass
-#     else:
-#         numbers = contests.lower().split().count(character)
-#         return numbers
-#
-#
-# filenames = 'text_files/alice.txt'
-# char = 'it'
-# number = statistics_characters(filenames, char)
-# print("这本书有" + "'" + char + "'" + str(number) + "个！")
+# 习题10-10
+print("习题10-10")
+
+
+def statistics_characters(filename, character):
+    try:
+        with open(filename) as f_obj:
+            contests = f_obj.read()
+    except FileNotFoundError:
+        pass
+    else:
+        numbers = contests.lower().split().count(character)
+        return numbers
+
+
+filenames = 'text_files/alice.txt'
+char = 'it'
+number = statistics_characters(filenames, char)
+print("这本书有" + "'" + char + "'" + str(number) + "个！")
 #############################################################################
 # # 储存数据
 # import json

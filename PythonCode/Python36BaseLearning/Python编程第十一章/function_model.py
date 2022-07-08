@@ -55,16 +55,16 @@
 # print("谢谢你们的配合！")
 # my_survey.show_results()
 ##############################################################################
-# 习题11-3
-print("习题11-3")
-
-
-class Employee():
-
-    def __init__(self, firstname, lastname, money):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.money = money
-
-    def give_raise(self, increase=5000):
-        return self.money + increase
+# # 习题11-3
+# print("习题11-3")
+#
+#
+# class Employee():
+#
+#     def __init__(self, firstname, lastname, money):
+#         self.firstname = firstname
+#         self.lastname = lastname
+#         self.money = money
+#
+#     def give_raise(self, increase=5000):
+#         return self.money + increase
