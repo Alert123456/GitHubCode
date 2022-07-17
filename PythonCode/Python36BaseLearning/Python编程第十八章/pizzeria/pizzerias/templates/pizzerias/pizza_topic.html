@@ -1,0 +1,18 @@
+{% extends "pizzerias/base.html" %}
+
+{% block content %}
+  <P>Order Pizza: {{ pizza_topic }}</P>
+  <p>Names:</p>
+  <ul>
+    {% for name in names %}
+      <li>
+        <p>{{ name.date_added|date:'M d, Y H:i' }}</p>
+        <p>{{ name.name|linebreaks }}</p>
+      </li>
+    {% empty %}
+      <li>
+        There are no entries for this topic yet.
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

@@ -14,7 +14,7 @@ class Topic(models.Model):
 class Entry(models.Model):
     """学到的有关某个主题的具体知识"""
     # 将数据库中的主题与键相连
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)  # 将数据库中的主题与键相连
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     # 不需要长度限制的text
     text = models.TextField()
     # 能够按照创建顺序呈现条目，并放置时间戳
