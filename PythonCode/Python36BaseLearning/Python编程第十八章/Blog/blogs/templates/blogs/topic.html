@@ -1,0 +1,10 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+  <P>主题: {{ topic }}</P>
+  <p>博客正文:</p>
+  <p>{{ topic.date_added|date:'M d, Y H:i' }}</p>
+<!--  要注意models所定义的属性-->
+  <p>{{ topic.text|linebreaks }}</p>
+  <a href="{% url 'blogs:edit_blog' topic.id %}">编辑修改</a>
+{% endblock content %}

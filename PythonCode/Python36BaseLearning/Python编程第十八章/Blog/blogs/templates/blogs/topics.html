@@ -1,0 +1,15 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+  <p>博客主题</p>
+    <ul>
+      {% for topic in topics %}
+        <li>
+          <a href="{% url 'blogs:topic' topic.id %}">{{ topic }}</a>
+        </li>
+      {% empty %}
+        <li>No topic have been added yet.</li>
+      {% endfor %}
+    </ul>
+  <a href="{% url 'blogs:new_blog' %}">新建帖子: </a>
+{% endblock content %}

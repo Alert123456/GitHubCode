@@ -1,0 +1,13 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+  <p>编辑帖子: </p>
+    <!--  实参action将表单发回给函数edit_entry()进行处理，将条目ID作为实参让视图
+      对象能够修改正确的条目对象-->
+    <form action="{% url 'blogs:edit_blog' blog.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit">保存更改</button>
+    </form>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  
+<!-- 让登录视图处理表单 -->
+  <form method="post" action="{% url 'users:login' %}">
+  {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">log in</button>
+<!--  成功则重定向到主页  -->
+    <input type="hidden" name="next" value="{% url 'blogs:index' %}" />
+  </form>
+
+{% endblock content %}
