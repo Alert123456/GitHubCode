@@ -1,28 +1,33 @@
 {% extends "learning_logs/base.html" %}
 
+{% block header %}
+  <h2>{{ topic }}</h2>
+{% endblock %}
+
 {% block content %}
-  <P>Topic: {{ topic }}</P>
-  <p>Entries:</p>
   <p>
     <!--  新建条目  -->
-    <a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a>
+    <h3>
+      <a href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</a>
+    </h3>
   </p>
 
-  <ul>
-    {% for entry in entries %}
-      <li>
-        <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-        <p>{{ entry.text|linebreaks }}</p>
-        <p>
-          <!-- 将编辑链接放在每个条目的日期和文本后面，使用模板根据URL模式edit_entry
-           和当前条目的ID属性来确定URL -->
+  {% for entry in entries %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          {{ entry.date_added|date:'M d, Y H:i' }}
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{ entry.text|linebreaks }}
+        <h4>
           <a href="{% url 'learning_logs:edit_entry' entry.id %}">edit entry</a>
-        </p>
-      </li>
-    {% empty %}
-      <li>
-        There are no entries for this topic yet.
-      </li>
-    {% endfor %}
-  </ul>
+        </h4>
+      </div>
+    </div>
+  {% empty %}
+    There are no entries for this topic yet.
+  {% endfor %}
+
 {% endblock content %}

@@ -1,13 +1,27 @@
 {% extends "blogs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h1><a href="{% url 'blogs:topic' blog.id %}">{{topic}}</a></h1>
+{% endblock header %}
 
 {% block content %}
-  <p>编辑帖子: </p>
-    <!--  实参action将表单发回给函数edit_entry()进行处理，将条目ID作为实参让视图
-      对象能够修改正确的条目对象-->
-    <form action="{% url 'blogs:edit_blog' blog.id %}" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button name="submit">保存更改</button>
-    </form>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>编辑帖子</h3>
+    </div>
+    
+    <div class="panel-body">
+      <form action="{% url 'blogs:edit_blog' blog.id %}" method="post"
+            class="form">
+        {% csrf_token %}
+          {% bootstrap_form form %}
+        {% buttons %}
+          <button name="submit" class="btn btn-primary">保存更改</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
 
 {% endblock content %}

@@ -1,15 +1,24 @@
 {% extends "blogs/base.html" %}
 
+{% block header %}
+  <h1>博客主题</h1>
+{% endblock header %}
+
 {% block content %}
-  <p>博客主题</p>
-    <ul>
-      {% for topic in topics %}
-        <li>
-          <a href="{% url 'blogs:topic' topic.id %}">{{ topic }}</a>
-        </li>
-      {% empty %}
-        <li>No topic have been added yet.</li>
-      {% endfor %}
-    </ul>
-  <a href="{% url 'blogs:new_blog' %}">新建帖子: </a>
+
+  <ul>
+    {% for topic in topics %}
+      <li>
+        <h3><a href="{% url 'blogs:topic' topic.id %}">{{ topic }}</a></h3>
+      </li>
+    {% empty %}
+      <li>No topic have been added yet.</li>
+    {% endfor %}
+  </ul>
+
+  <div class="container">
+    <h3><a href="{% url 'blogs:new_blog' %}">增加一个新帖子</a></h3>
+  </div>
+  
 {% endblock content %}
+

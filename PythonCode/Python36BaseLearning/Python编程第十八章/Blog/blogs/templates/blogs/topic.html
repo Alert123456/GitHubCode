@@ -1,10 +1,23 @@
 {% extends "blogs/base.html" %}
 
+{% block header %}
+  <h2>主题: {{ topic }}</h2>
+{% endblock header %}
+
 {% block content %}
-  <P>主题: {{ topic }}</P>
-  <p>博客正文:</p>
-  <p>{{ topic.date_added|date:'M d, Y H:i' }}</p>
-<!--  要注意models所定义的属性-->
-  <p>{{ topic.text|linebreaks }}</p>
-  <a href="{% url 'blogs:edit_blog' topic.id %}">编辑修改</a>
+  <p>
+    <h3>博客正文</h3>
+  </p>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>{{ topic.date_added|date:'M d, Y H:i' }}</h3>
+    </div>
+    
+    <div class="panel-body">
+      {{ topic.text|linebreaks }}
+      <h4><a href="{% url 'blogs:edit_blog' topic.id %}">编辑修改</a></h4>
+    </div>
+  </div>
+
 {% endblock content %}
