@@ -45,6 +45,12 @@
         "*.tcc": "cpp",
         "cstdarg": "cpp",
         "cwctype": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "sstream": "cpp",
+        "string": "cpp"
     }
 }
