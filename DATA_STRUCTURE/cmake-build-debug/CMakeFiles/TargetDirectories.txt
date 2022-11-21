@@ -1,3 +1,0 @@
-D:/StudyCode/DATA_STRUCTURE/cmake-build-debug/CMakeFiles/DATA_STRUCTURE.dir
-D:/StudyCode/DATA_STRUCTURE/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/StudyCode/DATA_STRUCTURE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
