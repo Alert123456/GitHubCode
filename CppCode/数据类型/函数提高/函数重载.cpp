@@ -55,7 +55,7 @@ int main() {
 	//int a = 5;
 	//func(a);
 	//func(5);
-	//func(3.14, 5);
+	func(3.14, 5);
 	//func(5, 3.14);
 	//func2(10); // 当函数重载碰到默认参数，产生二异性
 	system("pause");
