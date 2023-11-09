@@ -2,28 +2,28 @@
 #include<string>
 using namespace std;
 
-// ³ÉÔ±ÊôĞÔÉèÖÃÎªË½ÓĞ
-// 1.¿ÉÒÔ×Ô¼º¿ØÖÆ¶ÁĞ´È¨ÏŞ
-// 2.¶ÔÓÚĞ´¿ÉÒÔ¼ì²âÊı¾İµÄÓĞĞ§ĞÔ
+// æˆå‘˜å±æ€§è®¾ç½®ä¸ºç§æœ‰
+// 1.å¯ä»¥è‡ªå·±æ§åˆ¶è¯»å†™æƒé™
+// 2.å¯¹äºå†™å¯ä»¥æ£€æµ‹æ•°æ®çš„æœ‰æ•ˆæ€§
 
-// Éè¼ÆÈËÀà
+// è®¾è®¡äººç±»
 class Person
 {
 public:
-    //ÉèÖÃĞÕÃû
+    //è®¾ç½®å§“å
     void setName(string name)
     {
         m_Name = name;
     }
-    // »ñÈ¡ĞÕÃû
+    // è·å–å§“å
     string getName()
     {
         return m_Name;
     }
-    // »ñÈ¡ÄêÁä   ¿É¶Á¿ÉĞ´ Èç¹ûÏëĞŞ¸Ä £¨ÄêÁäµÄ·¶Î§±ØĞëÊÇ 0 ~ 150Ö®¼ä£©
+    // è·å–å¹´é¾„   å¯è¯»å¯å†™ å¦‚æœæƒ³ä¿®æ”¹ (å¹´é¾„çš„èŒƒå›´å¿…é¡»æ˜¯ 0 ~ 150ä¹‹é—´)
     int getAge()
     {
-        // m_Age = 0; //³õÊ¼»¯Îª0Ëê
+        // m_Age = 0; //åˆå§‹åŒ–ä¸º0å²
         return m_Age;
     }
     void setAge(int age)
@@ -31,23 +31,23 @@ public:
         if(age < 0 || age > 150)
         {
             m_Age = 0;
-            cout << "ÊäÈëµÄÄêÁäÓĞÎó!" << endl;
+            cout << "è¾“å…¥çš„å¹´é¾„æœ‰è¯¯!" << endl;
             return;
         }
             
         m_Age = age;
     }
-    // ÉèÖÃÇéÈË Ö»Ğ´
+    // è®¾ç½®æƒ…äºº åªå†™
     void setLover(string lover)
     {
         m_lover = lover;
     }
 private:
-    //ĞÕÃû  ¿É¶Á¿ÉĞ´
+    //å§“å  å¯è¯»å¯å†™
     string m_Name;
-    //ÄêÁä  Ö»¶Á
+    //å¹´é¾„  åªè¯»
     int m_Age;
-    //ÇéÈË  Ö»Ğ´
+    //æƒ…äºº  åªå†™
     string m_lover;
 
 };
@@ -61,7 +61,7 @@ int main() {
 
     cout << "He age is " << p.getAge() << endl;
 
-    p.setLover("ÓĞÔò"); 
+    p.setLover("æœ‰åˆ™"); 
 
 	// system("pause");
 	return 0;
